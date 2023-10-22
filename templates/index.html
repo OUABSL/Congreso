@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cargar PDF</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <h2>Congreso Beta</h2>
+  </nav>
+  
+  <section class="upload-section">
+    <h3>Cargar PDF</h3>
+    <form method="POST" enctype="multipart/form-data">
+      <input type="text" name="title" placeholder="Titulo">
+      <input type="file" name="pdf_file">
+      <input type="submit" value="Upload">
+    </form>
+  </section>
+  
+  <section class="response-section">
+    {% if result %}
+    <h3>Respuesta:</h3>
+      <div class="result">
+        <p>{{ result }}</p>
+      </div>
+    {% endif %}
+  </section>
+</body>
